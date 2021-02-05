@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.settings
+    - field.storage.config_pages.field_ca_pid
+id: config_pages.settings.field_ca_pid
+field_name: field_ca_pid
+entity_type: config_pages
+bundle: settings
+label: PID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

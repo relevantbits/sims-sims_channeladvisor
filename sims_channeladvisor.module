@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Sims ChannelAdvisor module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function sims_channeladvisor_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  // Add our custom 'entity.commerce_product.where_to_buy' route as a link
+  // template.
+  $entity_types['commerce_product']->setLinkTemplate('where_to_buy', '/product/{commerce_product}/where-to-buy');
+}

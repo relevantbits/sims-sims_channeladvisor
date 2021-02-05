@@ -1,0 +1,3 @@
+services:
+  sims_channeladvisor.iframe_manager:
+    class: Drupal\sims_channeladvisor\Services\IframeManager

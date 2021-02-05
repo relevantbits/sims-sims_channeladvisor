@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.settings
+    - field.storage.config_pages.field_ca_default_model
+id: config_pages.settings.field_ca_default_model
+field_name: field_ca_default_model
+entity_type: config_pages
+bundle: settings
+label: 'Default model name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+sims_channeladvisor.where_to_buy:
+  path: '/where-to-buy'
+  defaults:
+    _title: 'Where To Buy'
+    _controller: '\Drupal\sims_channeladvisor\Controller\SimsChanneladvisorController::build'
+  requirements:
+    _permission: 'view commerce_product'
+entity.commerce_product.where_to_buy:
+  path: '/product/{commerce_product}/where-to-buy'
+  defaults:
+    _title: 'Where To Buy'
+    _controller: '\Drupal\sims_channeladvisor\Controller\SimsChanneladvisorController::build'
+  requirements:
+    _permission: 'view commerce_product'
