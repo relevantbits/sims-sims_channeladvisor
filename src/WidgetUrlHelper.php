@@ -84,12 +84,12 @@ class WidgetUrlHelper {
    * @throw http\Exception\InvalidArgumentException
    */
   private function setQuery() {
-    if (empty($this->product->field_whatever) && empty($this->config->field_ca_default_model)) {
+    if (empty($this->product->field_model_name) && empty($this->config->field_ca_default_model)) {
       throw new \InvalidArgumentException('ChannelAdvisor iframe url cannot be generated because neither product nor default model value found.');
     }
     $query = [
       'pid' => $this->config->field_ca_pid->value,
-      'model' => !is_null($this->product) ? $this->product->field_whatever->value : $this->config->field_ca_default_model->value,
+      'model' => !is_null($this->product) ? $this->product->field_model_name->value : $this->config->field_ca_default_model->value,
     ];
 
     if (is_null($this->product)) {

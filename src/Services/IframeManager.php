@@ -22,7 +22,7 @@ class IframeManager {
         'src' => $widgetUrl->getIframeUrl()->toString(),
         'frameborder' => 0,
         'scrolling' => 'no',
-      ]
+      ],
     ];
   }
 

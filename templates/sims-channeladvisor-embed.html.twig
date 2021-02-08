@@ -1,32 +1,31 @@
-
 <div class="cr-container cr-mx-auto cr-max-w-screen-lg">
 
-    <header class="cr-my-6">
-        <h1 class="cr-uppercase cr-text-center md:cr-text-left cr-font-bold cr-text-4xl cr-leading-44 cr-text-blue-800 cr-mb-2">
-            {{ 'Where to Buy'|t }}
-        </h1>
-        <p class="cr-text-sm cr-text-gray-800">{{ 'Enter your postal code to find your closest location.'|t }}</p>
-    </header>
+  <header class="cr-my-6">
+    {% if show_title %}
+      <h1 class="cr-uppercase cr-text-center md:cr-text-left cr-font-bold cr-text-4xl cr-leading-44 cr-text-blue-800 cr-mb-2">
+        {{ 'Where to Buy'|t }}
+      </h1>
+    {% endif %}
+    <p class="cr-text-sm cr-text-gray-800">{{ 'Enter your postal code to find your closest location.'|t }}</p>
+  </header>
 
-    <style>
-      .ca-container {
-        position: relative;
-        overflow: hidden;
-        padding-top: 56.25%;
-      }
+  <style>
+    .ca-container {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%;
+    }
 
-      .ca-container iframe, .ca-container object, .ca-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-    </style>
-    <div class="cr-my-6">
-        <div class='ca-container'>
-          {{ widget }}
-        </div>
-    </div>
+    .ca-container iframe, .ca-container object, .ca-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+  <div class="ca-container cr-my-6">
+    {{ widget }}
+  </div>
 </div>

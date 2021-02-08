@@ -10,5 +10,9 @@ entity.commerce_product.where_to_buy:
   defaults:
     _title: 'Where To Buy'
     _controller: '\Drupal\sims_channeladvisor\Controller\SimsChanneladvisorController::build'
+  options:
+    parameters:
+      commerce_product:
+        type: entity:commerce_product
   requirements:
     _permission: 'view commerce_product'
