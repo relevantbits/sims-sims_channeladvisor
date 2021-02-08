@@ -1,0 +1,6 @@
+{
+  "name": "sims/sims_channeladvisor",
+  "type": "drupal-module",
+  "description": "ChannelAdvisor implementation for Sims sites.",
+  "keywords": ["Drupal"]
+}
