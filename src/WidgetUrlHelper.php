@@ -10,7 +10,6 @@ namespace Drupal\sims_channeladvisor;
 use Drupal\commerce_product\Entity\Product;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Url;
-use http\Exception\InvalidArgumentException;
 
 class WidgetUrlHelper {
 
@@ -63,9 +62,7 @@ class WidgetUrlHelper {
    */
   public function __construct(Product $product = NULL) {
     $this->product = $product;
-    /** @var Language $language */
-    $language = !is_null($product) ? $this->product->language() : \Drupal::languageManager()->getCurrentLanguage();
-    $this->config = config_pages_config('settings', $language);
+    $this->config = config_pages_config('settings');
     $this->setBaseUri();
     $this->setQuery();
   }
@@ -88,14 +85,14 @@ class WidgetUrlHelper {
    */
   private function setQuery() {
     if (empty($this->product->field_whatever) && empty($this->config->field_ca_default_model)) {
-      throw new InvalidArgumentException('ChannelAdvisor iframe url cannot be generated because neither product nor default model value found.');
+      throw new \InvalidArgumentException('ChannelAdvisor iframe url cannot be generated because neither product nor default model value found.');
     }
     $query = [
       'pid' => $this->config->field_ca_pid->value,
       'model' => !is_null($this->product) ? $this->product->field_whatever->value : $this->config->field_ca_default_model->value,
     ];
 
-    if (!is_null($this->product)) {
+    if (is_null($this->product)) {
       $query['type'] = 'local';
     }
 

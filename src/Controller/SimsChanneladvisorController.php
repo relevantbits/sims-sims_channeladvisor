@@ -46,7 +46,10 @@ class SimsChanneladvisorController implements ContainerInjectionInterface {
    * If product is set the result appears in modal, otherwise as a normal page.
    */
   public function build(Product $product = null) {
-    $build = $this->manager->getWidget($product);
+    $build = [
+      '#theme' => 'sims_channeladvisor_embed',
+      'widget' => $this->manager->getWidget($product),
+    ];
 
     if (is_null($product)) {
       return $build;

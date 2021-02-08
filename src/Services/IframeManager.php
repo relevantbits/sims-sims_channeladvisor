@@ -14,11 +14,14 @@ class IframeManager {
    * Gets the renderable array of widget's iframe .
    */
   public function getWidget(Product $product = NULL) {
+    $widgetUrl = new WidgetUrlHelper($product);
     return [
       '#type' => 'html_tag',
       '#tag' => 'iframe',
       '#attributes' => [
-        'src' => new WidgetUrlHelper($product),
+        'src' => $widgetUrl->getIframeUrl()->toString(),
+        'frameborder' => 0,
+        'scrolling' => 'no',
       ]
     ];
   }
